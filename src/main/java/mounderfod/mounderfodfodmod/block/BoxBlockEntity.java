@@ -2,14 +2,11 @@ package mounderfod.mounderfodfodmod.block;
 
 import mounderfod.mounderfodfodmod.MounderfodFodmod;
 import mounderfod.mounderfodfodmod.screen.BoxScreenHandler;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -17,14 +14,10 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.stream.IntStream;
-
-public class BoxBlockEntity extends LootableContainerBlockEntity implements NamedScreenHandlerFactory, ImplementedInventory, SidedInventory {
+public class BoxBlockEntity extends LootableContainerBlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
     private DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
-    private static final int[] AVAILABLE_SLOTS = IntStream.range(0, 9).toArray();
 
     public BoxBlockEntity() {
         super(MounderfodFodmod.BOX_BLOCK_ENTITY);
@@ -93,21 +86,5 @@ public class BoxBlockEntity extends LootableContainerBlockEntity implements Name
         }
 
         return tag;
-    }
-
-
-    @Override
-    public int[] getAvailableSlots(Direction side) {
-        return AVAILABLE_SLOTS;
-    }
-
-    @Override
-    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
-        return !(Block.getBlockFromItem(stack.getItem()) instanceof BoxBlock || Block.getBlockFromItem(stack.getItem()) instanceof ShulkerBoxBlock);
-    }
-
-    @Override
-    public boolean canExtract(int slot, ItemStack stack, Direction dir) {
-        return true;
     }
 }
