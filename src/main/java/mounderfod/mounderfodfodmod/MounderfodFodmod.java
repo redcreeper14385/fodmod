@@ -35,8 +35,8 @@ public class MounderfodFodmod implements ModInitializer {
         BOX_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "box"), BlockEntityType.Builder.create(BoxBlockEntity::new, BOX_BLOCK).build(null));
         BOX_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(MOD_ID, "box"), BoxScreenHandler::new);
 
-        IRON_GEAR = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "iron_gear"), new Item(new Item.Settings().group(ItemGroup.MATERIALS).maxCount(16)));
-        GOLD_GEAR = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gold_gear"), new Item(new Item.Settings().group(ItemGroup.MATERIALS).maxCount(16)));
+        IRON_GEAR = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "iron_gear"), new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16)));
+        GOLD_GEAR = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gold_gear"), new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16)));
 
     }
 

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#i#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "i": {
+      "tag": "c:iron_gears"
+    }
+  },
+  "result": {
+    "item": "fodmod:box",
+    "count": 1
+  }
+}
