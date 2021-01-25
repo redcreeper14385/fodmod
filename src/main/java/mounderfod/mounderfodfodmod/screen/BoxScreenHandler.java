@@ -1,6 +1,7 @@
 package mounderfod.mounderfodfodmod.screen;
 
 import mounderfod.mounderfodfodmod.MounderfodFodmod;
+import mounderfod.mounderfodfodmod.block.BoxSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -28,7 +29,7 @@ public class BoxScreenHandler extends ScreenHandler {
 
         for (m = 0; m < 3; ++m) {
             for (l = 0; l < 3; ++l) {
-                this.addSlot(new Slot(inventory, l + m * 3, 62 + l * 18, 17 + m * 18));
+                this.addSlot(new BoxSlot(inventory, l + m * 3, 62 + l * 18, 17 + m * 18));
             }
         }
 

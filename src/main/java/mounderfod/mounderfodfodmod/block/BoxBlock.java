@@ -7,6 +7,7 @@ import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -100,6 +101,7 @@ public class BoxBlock extends BlockWithEntity {
     public boolean hasComparatorOutput(BlockState state) {
         return true;
     }
+
 
     @Override
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
