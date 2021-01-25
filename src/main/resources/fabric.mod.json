@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "mounderfod-fodmod",
+  "version": "${version}",
+  "name": "The FodMod",
+  "description": "Random content and Vanilla+ stuff",
+  "authors": [
+    "mounderfod"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/mounderfod-fodmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "mounderfod.mounderfodfodmod.client.MounderfodFodmodClient"
+    ],
+    "main": [
+      "mounderfod.mounderfodfodmod.MounderfodFodmod"
+    ]
+  },
+  "mixins": [
+    "mounderfod-fodmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
