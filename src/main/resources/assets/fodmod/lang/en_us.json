@@ -1,3 +1,5 @@
 {
-  "block.fodmod.box": "Box"
+  "block.fodmod.box": "Box",
+  "item.fodmod.iron_gear": "Iron Gear",
+  "item.fodmod.gold_gear": "Gold Gear"
 }
