@@ -57,13 +57,8 @@ public class MounderfodFodmod implements ModInitializer {
         PROCESSOR_BLOCK = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "processor"), new ProcessorBlock(FabricBlockSettings.of(Material.METAL)));
         PROCESSOR_BLOCK_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "processor"), new BlockItem(PROCESSOR_BLOCK, new Item.Settings().group(ItemGroup.DECORATIONS)));
         PROCESSOR_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "processor"), BlockEntityType.Builder.create(ProcessorBlockEntity::new, PROCESSOR_BLOCK).build(null));
-        PROCESSING_RECIPE_TYPE = Registry.register(Registry.RECIPE_TYPE, new Identifier(MOD_ID, "processing"), new RecipeType<ProcessingRecipe>() {
-            @Override
-            public String toString() {
-                return "processing";
-            }
-        });
-        PROCESSING_RECIPE_SERIALIZER = RecipeSerializer.register("processing", new CookingRecipeSerializer<>(ProcessingRecipe::new, 200));
+        PROCESSING_RECIPE_TYPE = Registry.register(Registry.RECIPE_TYPE, new Identifier(MOD_ID, "processing"), new RecipeType<ProcessingRecipe>(){});
+        PROCESSING_RECIPE_SERIALIZER = Registry.register(Registry.RECIPE_SERIALIZER, "processing", new CookingRecipeSerializer<>(ProcessingRecipe::new, 200));
         PROCESSOR_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(MOD_ID, "processor"), ProcessorScreenHandler::new);
     }
 
