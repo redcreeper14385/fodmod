@@ -26,5 +26,6 @@
     "fabricloader": ">=0.11.1",
     "fabric": "*",
     "minecraft": "1.16.5"
-  }
+  },
+  "accessWidener": "fodmod.accesswidener"
 }
