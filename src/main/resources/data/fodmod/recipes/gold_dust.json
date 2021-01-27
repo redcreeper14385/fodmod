@@ -1,0 +1,8 @@
+{
+  "type": "fodmod:processing",
+  "ingredient": {
+    "item": "minecraft:gold_ore"
+  },
+  "result": "fodmod:gold_dust",
+  "experience": 0
+}

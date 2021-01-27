@@ -38,6 +38,9 @@ public class MounderfodFodmod implements ModInitializer {
     public static final Item IRON_GEAR;
     public static final Item GOLD_GEAR;
 
+    public static final Item IRON_DUST;
+    public static final Item GOLD_DUST;
+
     public static final RecipeType<ProcessingRecipe> PROCESSING_RECIPE_TYPE;
     public static final CookingRecipeSerializer<ProcessingRecipe> PROCESSING_RECIPE_SERIALIZER;
 
@@ -54,11 +57,14 @@ public class MounderfodFodmod implements ModInitializer {
         IRON_GEAR = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "iron_gear"), new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16)));
         GOLD_GEAR = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gold_gear"), new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16)));
 
+        IRON_DUST = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "iron_dust"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+        GOLD_DUST = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gold_dust"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+
         PROCESSOR_BLOCK = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "processor"), new ProcessorBlock(FabricBlockSettings.of(Material.METAL)));
         PROCESSOR_BLOCK_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "processor"), new BlockItem(PROCESSOR_BLOCK, new Item.Settings().group(ItemGroup.DECORATIONS)));
         PROCESSOR_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "processor"), BlockEntityType.Builder.create(ProcessorBlockEntity::new, PROCESSOR_BLOCK).build(null));
         PROCESSING_RECIPE_TYPE = Registry.register(Registry.RECIPE_TYPE, new Identifier(MOD_ID, "processing"), new RecipeType<ProcessingRecipe>(){});
-        PROCESSING_RECIPE_SERIALIZER = Registry.register(Registry.RECIPE_SERIALIZER, "processing", new CookingRecipeSerializer<>(ProcessingRecipe::new, 200));
+        PROCESSING_RECIPE_SERIALIZER = Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MOD_ID, "processing"), new CookingRecipeSerializer<>(ProcessingRecipe::new, 200));
         PROCESSOR_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(MOD_ID, "processor"), ProcessorScreenHandler::new);
     }
 

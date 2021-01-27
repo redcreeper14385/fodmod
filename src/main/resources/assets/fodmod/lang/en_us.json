@@ -1,5 +1,9 @@
 {
   "block.fodmod.box": "Box",
   "item.fodmod.iron_gear": "Iron Gear",
-  "item.fodmod.gold_gear": "Gold Gear"
+  "item.fodmod.gold_gear": "Gold Gear",
+  "item.fodmod.iron_dust": "Iron Dust",
+  "item.fodmod.gold_dust": "Gold Dust",
+  "container.processor": "Processor",
+  "block.fodmod.processor": "Processor"
 }
