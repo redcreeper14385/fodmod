@@ -9,7 +9,7 @@
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/mounderfod-fodmod/icon.png",
+  "icon": "assets/fodmod/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
