@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#g",
+    "g#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:water_bucket"
+    },
+    "g": {
+      "item": "fodmod:gold_gear"
+    }
+  },
+  "result": {
+    "item": "fodmod:water_source_tank",
+    "count": 1
+  }
+}

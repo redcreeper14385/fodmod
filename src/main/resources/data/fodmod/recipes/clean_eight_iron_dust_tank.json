@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fodmod:water_source_tank",
+      "remainder": { "item": "fodmod:water_source_tank" }
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_ingot",
+    "count": 16
+  }
+}

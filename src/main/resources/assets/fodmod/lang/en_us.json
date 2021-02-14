@@ -5,5 +5,7 @@
   "item.fodmod.iron_dust": "Iron Dust",
   "item.fodmod.gold_dust": "Gold Dust",
   "container.processor": "Processor",
-  "block.fodmod.processor": "Processor"
+  "block.fodmod.processor": "Processor",
+  "item.fodmod.water_source_tank": "Source Tank (Water)",
+  "item.fodmod.lava_source_tank": "Source Tank (Lava)"
 }

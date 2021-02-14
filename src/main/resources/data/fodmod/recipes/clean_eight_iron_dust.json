@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    },
+    {
+      "item": "fodmod:iron_dust"
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_ingot",
+    "count": 16
+  }
+}

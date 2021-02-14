@@ -5,7 +5,8 @@
       "item": "fodmod:gold_dust"
     },
     {
-      "item": "minecraft:water_bucket"
+      "item": "fodmod:water_source_tank",
+      "remainder": { "item": "fodmod:water_source_tank" }
     }
   ],
   "result": {

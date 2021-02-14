@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "###",
-    "#i#",
+    "did",
     "###"
   ],
   "key": {
@@ -11,6 +11,9 @@
     },
     "i": {
       "tag": "c:iron_gears"
+    },
+    "d": {
+      "item": "minecraft:diamond"
     }
   },
   "result": {

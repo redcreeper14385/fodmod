@@ -4,6 +4,7 @@ import mounderfod.mounderfodfodmod.block.BoxBlock;
 import mounderfod.mounderfodfodmod.block.BoxBlockEntity;
 import mounderfod.mounderfodfodmod.block.ProcessorBlock;
 import mounderfod.mounderfodfodmod.block.ProcessorBlockEntity;
+import mounderfod.mounderfodfodmod.item.SourceTankItem;
 import mounderfod.mounderfodfodmod.recipe.ProcessingRecipe;
 import mounderfod.mounderfodfodmod.screen.BoxScreenHandler;
 import mounderfod.mounderfodfodmod.screen.ProcessorScreenHandler;
@@ -14,11 +15,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.recipe.CookingRecipeSerializer;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
@@ -46,6 +47,8 @@ public class MounderfodFodmod implements ModInitializer {
 
     public static final ScreenHandlerType<ProcessorScreenHandler> PROCESSOR_SCREEN_HANDLER;
 
+    public static final Item WATER_SOURCE_TANK;
+
     public static final String MOD_ID = "fodmod";
 
     static {
@@ -66,6 +69,8 @@ public class MounderfodFodmod implements ModInitializer {
         PROCESSING_RECIPE_TYPE = Registry.register(Registry.RECIPE_TYPE, new Identifier(MOD_ID, "processing"), new RecipeType<ProcessingRecipe>(){});
         PROCESSING_RECIPE_SERIALIZER = Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MOD_ID, "processing"), new CookingRecipeSerializer<>(ProcessingRecipe::new, 200));
         PROCESSOR_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(MOD_ID, "processor"), ProcessorScreenHandler::new);
+
+        WATER_SOURCE_TANK = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "water_source_tank"), new SourceTankItem(Fluids.WATER, new Item.Settings().group(ItemGroup.MISC).maxCount(1)));
     }
 
     @Override
