@@ -1,0 +1,8 @@
+{
+  "type": "fodmod:carbon_infusing",
+  "ingredient": {
+    "item": "minecraft:iron_dust"
+  },
+  "result": "fodmod:steel_dust",
+  "experience": 0
+}

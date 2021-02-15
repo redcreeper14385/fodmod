@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fodmod:steel_nugget"
+    },
+    {
+      "item": "fodmod:steel_nugget"
+    },
+    {
+      "item": "fodmod:steel_nugget"
+    },
+    {
+      "item": "fodmod:steel_nugget"
+    },
+    {
+      "item": "fodmod:steel_nugget"
+    },
+    {
+      "item": "fodmod:steel_nugget"
+    },
+    {
+      "item": "fodmod:steel_nugget"
+    },
+    {
+      "item": "fodmod:steel_nugget"
+    },
+    {
+      "item": "fodmod:steel_nugget"
+    }
+  ],
+  "result": {
+    "item": "fodmod:steel_ingot",
+    "count": 1
+  }
+}

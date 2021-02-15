@@ -7,5 +7,10 @@
   "container.processor": "Processor",
   "block.fodmod.processor": "Processor",
   "item.fodmod.water_source_tank": "Source Tank (Water)",
-  "item.fodmod.lava_source_tank": "Source Tank (Lava)"
+  "item.fodmod.lava_source_tank": "Source Tank (Lava)",
+  "container.carbon_infuser": "Carbon Infuser",
+  "block.fodmod.carbon_infuser": "Carbon Infuser",
+  "item.fodmod.steel_dust": "Steel Dust",
+  "item.fodmod.steel_ingot": "Steel Ingot",
+  "item.fodmod.steel_nugget": "Steel Nugget"
 }

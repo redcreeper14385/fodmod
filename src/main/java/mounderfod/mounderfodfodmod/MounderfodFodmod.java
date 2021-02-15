@@ -1,12 +1,11 @@
 package mounderfod.mounderfodfodmod;
 
-import mounderfod.mounderfodfodmod.block.BoxBlock;
-import mounderfod.mounderfodfodmod.block.BoxBlockEntity;
-import mounderfod.mounderfodfodmod.block.ProcessorBlock;
-import mounderfod.mounderfodfodmod.block.ProcessorBlockEntity;
+import mounderfod.mounderfodfodmod.block.*;
 import mounderfod.mounderfodfodmod.item.SourceTankItem;
+import mounderfod.mounderfodfodmod.recipe.CarbonInfusingRecipe;
 import mounderfod.mounderfodfodmod.recipe.ProcessingRecipe;
 import mounderfod.mounderfodfodmod.screen.BoxScreenHandler;
+import mounderfod.mounderfodfodmod.screen.CarbonInfuserScreenHandler;
 import mounderfod.mounderfodfodmod.screen.ProcessorScreenHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -49,6 +48,19 @@ public class MounderfodFodmod implements ModInitializer {
 
     public static final Item WATER_SOURCE_TANK;
 
+    public static final Block CARBON_INFUSER_BLOCK;
+    public static final BlockItem CARBON_INFUSER_BLOCK_ITEM;
+    public static final BlockEntityType<CarbonInfuserBlockEntity> CARBON_INFUSER_BLOCK_ENTITY;
+
+    public static final RecipeType<CarbonInfusingRecipe> CARBON_INFUSING_RECIPE_TYPE;
+    public static final CookingRecipeSerializer<CarbonInfusingRecipe> CARBON_INFUSING_RECIPE_SERIALIZER;
+
+    public static final ScreenHandlerType<CarbonInfuserScreenHandler> CARBON_INFUSER_SCREEN_HANDLER;
+
+    public static final Item STEEL_DUST;
+    public static final Item STEEL_INGOT;
+    public static final Item STEEL_NUGGET;
+
     public static final String MOD_ID = "fodmod";
 
     static {
@@ -70,7 +82,19 @@ public class MounderfodFodmod implements ModInitializer {
         PROCESSING_RECIPE_SERIALIZER = Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MOD_ID, "processing"), new CookingRecipeSerializer<>(ProcessingRecipe::new, 200));
         PROCESSOR_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(MOD_ID, "processor"), ProcessorScreenHandler::new);
 
+        CARBON_INFUSER_BLOCK = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "carbon_infuser"), new CarbonInfuserBlock(FabricBlockSettings.of(Material.METAL)));
+        CARBON_INFUSER_BLOCK_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "carbon_infuser"), new BlockItem(CARBON_INFUSER_BLOCK, new Item.Settings().group(ItemGroup.DECORATIONS)));
+        CARBON_INFUSER_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "carbon_infuser"), BlockEntityType.Builder.create(CarbonInfuserBlockEntity::new, CARBON_INFUSER_BLOCK).build(null));
+        CARBON_INFUSING_RECIPE_TYPE = Registry.register(Registry.RECIPE_TYPE, new Identifier(MOD_ID, "carbon_infusing"), new RecipeType<CarbonInfusingRecipe>(){});
+        CARBON_INFUSING_RECIPE_SERIALIZER = Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MOD_ID, "carbon_infusing"), new CookingRecipeSerializer<>(CarbonInfusingRecipe::new, 200));
+        CARBON_INFUSER_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(MOD_ID, "carbon_infuser"), CarbonInfuserScreenHandler::new);
+
         WATER_SOURCE_TANK = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "water_source_tank"), new SourceTankItem(Fluids.WATER, new Item.Settings().group(ItemGroup.MISC).maxCount(1)));
+
+        STEEL_DUST = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_dust"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+        STEEL_INGOT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_ingot"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+        STEEL_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+
     }
 
     @Override

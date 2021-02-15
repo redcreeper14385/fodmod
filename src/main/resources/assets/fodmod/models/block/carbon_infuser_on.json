@@ -2,7 +2,7 @@
   "parent": "minecraft:block/orientable",
   "textures": {
     "top": "fodmod:machine_sides",
-    "front": "fodmod:processor_front_on",
+    "front": "fodmod:carbon_infuser_front_on",
     "side": "fodmod:machine_sides"
   }
 }
