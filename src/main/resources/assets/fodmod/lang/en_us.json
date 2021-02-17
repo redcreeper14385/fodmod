@@ -12,5 +12,9 @@
   "block.fodmod.carbon_infuser": "Carbon Infuser",
   "item.fodmod.steel_dust": "Steel Dust",
   "item.fodmod.steel_ingot": "Steel Ingot",
-  "item.fodmod.steel_nugget": "Steel Nugget"
+  "item.fodmod.steel_nugget": "Steel Nugget",
+  "item.fodmod.zinc_dust": "Zinc Dust",
+  "item.fodmod.zinc_ingot": "Zinc Ingot",
+  "item.fodmod.zinc_nugget": "Zinc Nugget",
+  "block.fodmod.zinc_ore": "Zinc Ore"
 }

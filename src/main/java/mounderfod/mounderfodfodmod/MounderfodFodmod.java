@@ -8,6 +8,8 @@ import mounderfod.mounderfodfodmod.screen.BoxScreenHandler;
 import mounderfod.mounderfodfodmod.screen.CarbonInfuserScreenHandler;
 import mounderfod.mounderfodfodmod.screen.ProcessorScreenHandler;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.Block;
@@ -22,7 +24,15 @@ import net.minecraft.recipe.CookingRecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
 
 public class MounderfodFodmod implements ModInitializer {
 
@@ -61,6 +71,12 @@ public class MounderfodFodmod implements ModInitializer {
     public static final Item STEEL_INGOT;
     public static final Item STEEL_NUGGET;
 
+    public static final Item ZINC_DUST;
+    public static final Item ZINC_INGOT;
+    public static final Item ZINC_NUGGET;
+    public static final Block ZINC_ORE;
+    public static final BlockItem ZINC_ORE_ITEM;
+
     public static final String MOD_ID = "fodmod";
 
     static {
@@ -95,10 +111,31 @@ public class MounderfodFodmod implements ModInitializer {
         STEEL_INGOT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_ingot"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         STEEL_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
 
+        ZINC_DUST = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_dust"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+        ZINC_INGOT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_ingot"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+        ZINC_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+        ZINC_ORE = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "zinc_ore"), new ProcessorBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
+        ZINC_ORE_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_ore"), new BlockItem(ZINC_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
     }
+
+    private static ConfiguredFeature<?, ?> ZINC_ORE_OVERWORLD = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ZINC_ORE.getDefaultState(),
+                    14
+                    ))
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
+                    0,
+                    0,
+                    63
+            )))
+            .spreadHorizontally()
+            .repeat(20);
 
     @Override
     public void onInitialize() {
-
+        RegistryKey<ConfiguredFeature<?, ?>> zincOreOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("fodmod", "zinc_ore_overworld"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, zincOreOverworld.getValue(), ZINC_ORE_OVERWORLD);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, zincOreOverworld);
     }
 }

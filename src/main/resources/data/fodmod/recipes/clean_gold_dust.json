@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     },
     {
       "item": "minecraft:water_bucket"

@@ -6,28 +6,28 @@
       "remainder": { "item": "fodmod:water_source_tank" }
     },
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     },
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     },
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     },
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     },
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     },
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     },
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     },
     {
-      "item": "fodmod:gold_dust"
+      "tag": "c:gold_dusts"
     }
   ],
   "result": {
