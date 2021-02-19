@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:zinc_nuggets"
+    },
+    {
+      "tag": "c:zinc_nuggets"
+    },
+    {
+      "tag": "c:zinc_nuggets"
+    },
+    {
+      "tag": "c:zinc_nuggets"
+    },
+    {
+      "tag": "c:zinc_nuggets"
+    },
+    {
+      "tag": "c:zinc_nuggets"
+    },
+    {
+      "tag": "c:zinc_nuggets"
+    },
+    {
+      "tag": "c:zinc_nuggets"
+    },
+    {
+      "tag": "c:zinc_nuggets"
+    }
+  ],
+  "result": {
+    "item": "fodmod:zinc_ingot",
+    "count": 1
+  }
+}

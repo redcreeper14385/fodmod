@@ -114,7 +114,7 @@ public class MounderfodFodmod implements ModInitializer {
         ZINC_DUST = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_dust"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         ZINC_INGOT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_ingot"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         ZINC_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
-        ZINC_ORE = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "zinc_ore"), new ProcessorBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
+        ZINC_ORE = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "zinc_ore"), new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
         ZINC_ORE_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_ore"), new BlockItem(ZINC_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
     }
 

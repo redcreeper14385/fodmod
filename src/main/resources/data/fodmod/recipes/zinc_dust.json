@@ -1,0 +1,8 @@
+{
+  "type": "fodmod:processing",
+  "ingredient": {
+    "item": "fodmod:zinc_ore"
+  },
+  "result": "fodmod:zinc_dust",
+  "experience": 0
+}

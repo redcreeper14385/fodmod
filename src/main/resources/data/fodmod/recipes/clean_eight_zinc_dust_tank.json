@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fodmod:water_source_tank",
+      "remainder": { "item": "fodmod:water_source_tank" }
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    }
+  ],
+  "result": {
+    "item": "fodmod:zinc_ingot",
+    "count": 16
+  }
+}

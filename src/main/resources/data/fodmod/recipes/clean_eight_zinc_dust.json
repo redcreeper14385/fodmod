@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    },
+    {
+      "tag": "c:zinc_dusts"
+    }
+  ],
+  "result": {
+    "item": "fodmod:zinc_ingot",
+    "count": 16
+  }
+}
