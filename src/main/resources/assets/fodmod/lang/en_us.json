@@ -16,5 +16,7 @@
   "item.fodmod.zinc_dust": "Zinc Dust",
   "item.fodmod.zinc_ingot": "Zinc Ingot",
   "item.fodmod.zinc_nugget": "Zinc Nugget",
-  "block.fodmod.zinc_ore": "Zinc Ore"
+  "block.fodmod.zinc_ore": "Zinc Ore",
+  "item.fodmod.galvanised_steel_ingot": "Galvanised Steel Ingot",
+  "item.fodmod.galvanised_steel_nugget": "Galvanised Steel Nugget"
 }

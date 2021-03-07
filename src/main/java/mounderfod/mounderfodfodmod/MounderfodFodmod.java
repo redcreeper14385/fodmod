@@ -33,6 +33,12 @@ import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import wraith.alloy_forgery.MaterialWorth;
+import wraith.alloy_forgery.RecipeOutput;
+import wraith.alloy_forgery.api.ForgeRecipes;
+import wraith.alloy_forgery.api.MaterialWorths;
+
+import java.util.HashMap;
 
 public class MounderfodFodmod implements ModInitializer {
 
@@ -77,6 +83,9 @@ public class MounderfodFodmod implements ModInitializer {
     public static final Block ZINC_ORE;
     public static final BlockItem ZINC_ORE_ITEM;
 
+    public static final Item GALVANISED_STEEL_INGOT;
+    public static final Item GALVANISED_STEEL_NUGGET;
+
     public static final String MOD_ID = "fodmod";
 
     static {
@@ -116,6 +125,9 @@ public class MounderfodFodmod implements ModInitializer {
         ZINC_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         ZINC_ORE = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "zinc_ore"), new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
         ZINC_ORE_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_ore"), new BlockItem(ZINC_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        GALVANISED_STEEL_INGOT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "galvanised_steel_ingot"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+        GALVANISED_STEEL_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "galvanised_steel_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
     }
 
     private static ConfiguredFeature<?, ?> ZINC_ORE_OVERWORLD = Feature.ORE
@@ -137,5 +149,37 @@ public class MounderfodFodmod implements ModInitializer {
         RegistryKey<ConfiguredFeature<?, ?>> zincOreOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("fodmod", "zinc_ore_overworld"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, zincOreOverworld.getValue(), ZINC_ORE_OVERWORLD);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, zincOreOverworld);
+
+        MaterialWorths.addMaterials(new HashMap<String, HashMap<String, MaterialWorth>>() {{
+            put("steel", new HashMap<String, MaterialWorth>() {{
+                put("#c:steel_blocks", new MaterialWorth(81, true));
+                put("#c:steel_ingots", new MaterialWorth(9, true));
+                put("#c:steel_dusts", new MaterialWorth(9, false));
+                put("#c:steel_nuggets", new MaterialWorth(1, true));
+            }});
+            put("zinc", new HashMap<String, MaterialWorth>() {{
+                put("#c:zinc_blocks", new MaterialWorth(81, true));
+                put("#c:zinc_ingots", new MaterialWorth(9, true));
+                put("#c:zinc_dusts", new MaterialWorth(9, false));
+                put("#c:zinc_ores", new MaterialWorth(9, false));
+                put("#c:zinc_nuggets", new MaterialWorth(1, true));
+            }});
+        }}, false);
+
+        HashMap<String, Integer> galvanisedSteelInputs = new HashMap<String, Integer>();
+
+        galvanisedSteelInputs.put("zinc", 9);
+        galvanisedSteelInputs.put("steel", 9);
+
+        ForgeRecipes.addRecipe(
+                galvanisedSteelInputs,
+                new RecipeOutput(
+                        "fodmod:galvanised_steel_ingot",
+                        1,
+                        9,
+                        1),
+                true
+        );
+
     }
 }
