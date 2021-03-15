@@ -87,7 +87,6 @@ public class MounderfodFodmod implements ModInitializer {
     public static final Item GALVANISED_STEEL_NUGGET;
 
     public static final Item BASIC_CIRCUIT;
-    public static final Item IMPROVED_CIRCUIT;
     public static final Item ADVANCED_CIRCUIT;
 
     public static final String MOD_ID = "fodmod";
@@ -125,7 +124,6 @@ public class MounderfodFodmod implements ModInitializer {
         STEEL_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
 
         BASIC_CIRCUIT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "basic_circuit"), new Item(new Item.Settings().group(ItemGroup.MISC)));
-        IMPROVED_CIRCUIT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "improved_circuit"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         ADVANCED_CIRCUIT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "advanced_circuit"), new Item(new Item.Settings().group(ItemGroup.MISC)));
 
         ZINC_DUST = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_dust"), new Item(new Item.Settings().group(ItemGroup.MISC)));

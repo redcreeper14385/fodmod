@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "GRG",
+    " G "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "G": {
+      "item": "fodmod:galvanised_steel_ingot"
+    },
+    "R": {
+      "item": "fodmod:basic_circuit"
+    }
+  },
+  "result": {
+    "item": "fodmod:advanced_circuit",
+    "count": 1
+  }
+}

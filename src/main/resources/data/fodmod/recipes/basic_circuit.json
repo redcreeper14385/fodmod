@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " s ",
+    "RsR",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "fodmod:steel_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "fodmod:basic_circuit",
+    "count": 1
+  }
+}
