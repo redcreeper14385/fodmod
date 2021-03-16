@@ -3,9 +3,11 @@ package mounderfod.mounderfodfodmod;
 import mounderfod.mounderfodfodmod.block.*;
 import mounderfod.mounderfodfodmod.item.SourceTankItem;
 import mounderfod.mounderfodfodmod.recipe.CarbonInfusingRecipe;
+import mounderfod.mounderfodfodmod.recipe.CentrifugeRecipe;
 import mounderfod.mounderfodfodmod.recipe.ProcessingRecipe;
 import mounderfod.mounderfodfodmod.screen.BoxScreenHandler;
 import mounderfod.mounderfodfodmod.screen.CarbonInfuserScreenHandler;
+import mounderfod.mounderfodfodmod.screen.CentrifugeScreenHandler;
 import mounderfod.mounderfodfodmod.screen.ProcessorScreenHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -59,8 +61,11 @@ public class MounderfodFodmod implements ModInitializer {
 
     public static final RecipeType<ProcessingRecipe> PROCESSING_RECIPE_TYPE;
     public static final CookingRecipeSerializer<ProcessingRecipe> PROCESSING_RECIPE_SERIALIZER;
-
     public static final ScreenHandlerType<ProcessorScreenHandler> PROCESSOR_SCREEN_HANDLER;
+
+    public static final RecipeType<CentrifugeRecipe> CENTRIFUGE_RECIPE_TYPE;
+    public static final CookingRecipeSerializer<CentrifugeRecipe> CENTRIFUGE_RECIPE_SERIALIZER;
+    public static final ScreenHandlerType<CentrifugeScreenHandler> CENTRIFUGE_SCREEN_HANDLER;
 
     public static final Item WATER_SOURCE_TANK;
 
@@ -89,12 +94,12 @@ public class MounderfodFodmod implements ModInitializer {
     public static final Item BASIC_CIRCUIT;
     public static final Item ADVANCED_CIRCUIT;
 
-    public static final Block GRINDER;
-    public static final BlockItem GRINDER_ITEM;
+    public static final Block CENTRIFUGE_BLOCK;
+    public static final BlockItem CENTRIFUGE_BLOCK_ITEM;
+    public static final BlockEntityType<CentrifugeBlockEntity> CENTRIFUGE_BLOCK_ENTITY;
 
     public static final String MOD_ID = "fodmod";
 
-    //TODO maybe add another block crafted by using the gears and the circuits, test name 'grinder'
     static {
         BOX_BLOCK = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "box"), new BoxBlock(FabricBlockSettings.copyOf(Blocks.BARREL)));
         BOX_BLOCK_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "box"), new BlockItem(BOX_BLOCK, new Item.Settings().group(ItemGroup.DECORATIONS).maxCount(1)));
@@ -136,8 +141,12 @@ public class MounderfodFodmod implements ModInitializer {
         ZINC_ORE = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "zinc_ore"), new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
         ZINC_ORE_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_ore"), new BlockItem(ZINC_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
-        GRINDER = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "grinder"), new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-        GRINDER_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "grinder"), new BlockItem(GRINDER, new Item.Settings().group(ItemGroup.MISC)));
+        CENTRIFUGE_BLOCK = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "centrifuge"), new CentrifugeBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+        CENTRIFUGE_BLOCK_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "centrifuge"), new BlockItem(CENTRIFUGE_BLOCK, new Item.Settings().group(ItemGroup.MISC)));
+        CENTRIFUGE_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "centrifuge"), BlockEntityType.Builder.create(CentrifugeBlockEntity::new, CENTRIFUGE_BLOCK).build(null));
+        CENTRIFUGE_RECIPE_TYPE = Registry.register(Registry.RECIPE_TYPE, new Identifier(MOD_ID, "centrifuge"), new RecipeType<CentrifugeRecipe>(){});
+        CENTRIFUGE_RECIPE_SERIALIZER = Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MOD_ID, "centrifuge"), new CookingRecipeSerializer<>(CentrifugeRecipe::new, 200));
+        CENTRIFUGE_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(MOD_ID, "centrifuge"), CentrifugeScreenHandler::new);
 
         GALVANISED_STEEL_INGOT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "galvanised_steel_ingot"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         GALVANISED_STEEL_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "galvanised_steel_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
