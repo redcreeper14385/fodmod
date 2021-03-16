@@ -89,8 +89,12 @@ public class MounderfodFodmod implements ModInitializer {
     public static final Item BASIC_CIRCUIT;
     public static final Item ADVANCED_CIRCUIT;
 
+    public static final Block GRINDER;
+    public static final BlockItem GRINDER_ITEM;
+
     public static final String MOD_ID = "fodmod";
 
+    //TODO maybe add another block crafted by using the gears and the circuits, test name 'grinder'
     static {
         BOX_BLOCK = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "box"), new BoxBlock(FabricBlockSettings.copyOf(Blocks.BARREL)));
         BOX_BLOCK_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "box"), new BlockItem(BOX_BLOCK, new Item.Settings().group(ItemGroup.DECORATIONS).maxCount(1)));
@@ -131,6 +135,9 @@ public class MounderfodFodmod implements ModInitializer {
         ZINC_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         ZINC_ORE = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "zinc_ore"), new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
         ZINC_ORE_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "zinc_ore"), new BlockItem(ZINC_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        GRINDER = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "grinder"), new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+        GRINDER_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "grinder"), new BlockItem(GRINDER, new Item.Settings().group(ItemGroup.MISC)));
 
         GALVANISED_STEEL_INGOT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "galvanised_steel_ingot"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         GALVANISED_STEEL_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "galvanised_steel_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
