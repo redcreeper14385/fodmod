@@ -23,5 +23,7 @@
   "item.fodmod.advanced_circuit": "Advanced Circuit",
   "container.centrifuge": "Centrifuge",
   "block.fodmod.centrifuge": "Centrifuge",
-  "block.fodmod.carbon_frame": "Carbon Frame"
+  "block.fodmod.carbon_frame": "Carbon Frame",
+  "message.fodmod.taterBelief": "Tiny Potato believes in you!",
+  "message.fodmod.taterFire": "This is fine!"
 }
