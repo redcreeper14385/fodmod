@@ -85,9 +85,9 @@ public class MounderfodFodmod implements ModInitializer {
     public static final Item ZINC_DUST;
     public static final Item ZINC_INGOT;
     public static final Item ZINC_NUGGET;
+    
     public static final Block ZINC_ORE;
     public static final BlockItem ZINC_ORE_ITEM;
-
     public static final Item GALVANISED_STEEL_INGOT;
     public static final Item GALVANISED_STEEL_NUGGET;
 
@@ -97,6 +97,9 @@ public class MounderfodFodmod implements ModInitializer {
     public static final Block CENTRIFUGE_BLOCK;
     public static final BlockItem CENTRIFUGE_BLOCK_ITEM;
     public static final BlockEntityType<CentrifugeBlockEntity> CENTRIFUGE_BLOCK_ENTITY;
+
+    public static final Block CARBON_FRAME;
+    public static final BlockItem CARBON_FRAME_ITEM;
 
     public static final String MOD_ID = "fodmod";
 
@@ -150,6 +153,9 @@ public class MounderfodFodmod implements ModInitializer {
 
         GALVANISED_STEEL_INGOT = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "galvanised_steel_ingot"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         GALVANISED_STEEL_NUGGET = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "galvanised_steel_nugget"), new Item(new Item.Settings().group(ItemGroup.MISC)));
+
+        CARBON_FRAME = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "carbon_frame"), new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+        CARBON_FRAME_ITEM = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "carbon_frame"), new BlockItem(CARBON_FRAME, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
 
     }
