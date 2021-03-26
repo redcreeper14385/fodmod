@@ -1,0 +1,8 @@
+{
+  "type": "fodmod:centrifuge",
+  "ingredient": {
+    "item": "minecraft:string"
+  },
+  "result": "minecraft:white_wool",
+  "experience": 0
+}

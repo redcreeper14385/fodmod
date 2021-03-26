@@ -1,0 +1,8 @@
+{
+  "type": "fodmod:centrifuge",
+  "ingredient": {
+    "item": "minecraft:honeycomb"
+  },
+  "result": "minecraft:sugar",
+  "experience": 0
+}

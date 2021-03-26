@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "bib",
+    "#c#"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:steel_ingots"
+    },
+    "i": {
+      "item": "fodmod:basic_circuit"
+    },
+    "b": {
+      "item": "minecraft:bucket"
+    },
+    "c": {
+      "item": "fodmod:carbon_frame"
+    }
+  },
+  "result": {
+    "item": "fodmod:box",
+    "count": 1
+  }
+}
