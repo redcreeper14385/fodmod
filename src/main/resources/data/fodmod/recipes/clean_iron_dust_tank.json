@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "c:iron_dusts"
+      "item": "fodmod:iron_dust"
     },
     {
       "item": "fodmod:water_source_tank",
