@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "top": "fodmod:basic_machine_sides",
+    "top": "fodmod:machine_sides",
     "front": "fodmod:centrifuge_front",
-    "side": "fodmod:basic_machine_sides"
+    "side": "fodmod:machine_sides"
   }
 }
