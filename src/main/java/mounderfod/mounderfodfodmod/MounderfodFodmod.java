@@ -1,7 +1,6 @@
 package mounderfod.mounderfodfodmod;
 
 import mounderfod.mounderfodfodmod.block.*;
-import mounderfod.mounderfodfodmod.entity.TaterEntity;
 import mounderfod.mounderfodfodmod.item.SourceTankItem;
 import mounderfod.mounderfodfodmod.recipe.CarbonInfusingRecipe;
 import mounderfod.mounderfodfodmod.recipe.CentrifugeRecipe;
@@ -13,19 +12,12 @@ import mounderfod.mounderfodfodmod.screen.ProcessorScreenHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -107,12 +99,6 @@ public class MounderfodFodmod implements ModInitializer {
     public static final BlockItem CARBON_FRAME_ITEM;
 
     public static final String MOD_ID = "fodmod";
-
-    public static final EntityType<TaterEntity> TATER = Registry.register(
-            Registry.ENTITY_TYPE,
-            new Identifier(MOD_ID, "tater"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, TaterEntity::new).dimensions(EntityDimensions.fixed(0.875f, 1.3125f)).build()
-    );
 
     static {
         BOX_BLOCK = Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "box"), new BoxBlock(FabricBlockSettings.copyOf(Blocks.BARREL)));
@@ -204,7 +190,7 @@ public class MounderfodFodmod implements ModInitializer {
             }});
         }}, false);
 
-        HashMap<String, Integer> galvanisedSteelInputs = new HashMap<String, Integer>();
+        HashMap<String, Integer> galvanisedSteelInputs = new HashMap<>();
 
         galvanisedSteelInputs.put("zinc", 9);
         galvanisedSteelInputs.put("steel", 9);
@@ -218,6 +204,5 @@ public class MounderfodFodmod implements ModInitializer {
                         1),
                 true
         );
-        FabricDefaultAttributeRegistry.register(TATER, TaterEntity.createMobAttributes());
     }
 }
