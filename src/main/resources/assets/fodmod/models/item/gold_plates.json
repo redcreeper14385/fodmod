@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "fodmod:iron_gear"
+    "layer0": "fodmod:gold_plates"
   }
 }

@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " i ",
-    "iIi",
-    " i "
+    "i",
+    "I",
+    "i"
   ],
   "key": {
     "i": {
@@ -14,7 +14,7 @@
     }
   },
   "result": {
-    "item": "fodmod:iron_gear",
-    "count": 1
+    "item": "fodmod:iron_plates",
+    "count": 2
   }
 }

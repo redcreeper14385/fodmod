@@ -10,7 +10,7 @@
       "tag": "minecraft:planks"
     },
     "i": {
-      "tag": "c:iron_gears"
+      "item": "fodmod:iron_plates"
     },
     "d": {
       "item": "minecraft:diamond"

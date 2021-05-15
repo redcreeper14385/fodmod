@@ -4,7 +4,7 @@ The mod is licensed under the MIT license, and apart from these:
 - Processor Block
 - Carbon Infuser Block
 - Source Tank (Water)
-- All dusts, ingots and nuggets
+- All dusts, ingots, plates and nuggets
 
 
 all of the assets are made by malcolmriley (https://github.com/malcolmriley/unused-textures).

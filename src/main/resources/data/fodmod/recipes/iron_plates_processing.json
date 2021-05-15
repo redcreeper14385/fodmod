@@ -3,6 +3,6 @@
   "ingredient": {
     "item": "minecraft:iron_ingot"
   },
-  "result": "fodmod:iron_gear",
+  "result": "fodmod:iron_plates",
   "experience": 0
 }

@@ -53,8 +53,8 @@ public class MounderfodFodmod implements ModInitializer {
     public static final BlockItem PROCESSOR_BLOCK_ITEM;
     public static final BlockEntityType<ProcessorBlockEntity> PROCESSOR_BLOCK_ENTITY;
 
-    public static final Item IRON_GEAR;
-    public static final Item GOLD_GEAR;
+    public static final Item IRON_PLATES;
+    public static final Item GOLD_PLATES;
 
     public static final Item IRON_DUST;
     public static final Item GOLD_DUST;
@@ -106,8 +106,8 @@ public class MounderfodFodmod implements ModInitializer {
         BOX_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "box"), BlockEntityType.Builder.create(BoxBlockEntity::new, BOX_BLOCK).build(null));
         BOX_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(MOD_ID, "box"), BoxScreenHandler::new);
 
-        IRON_GEAR = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "iron_gear"), new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16)));
-        GOLD_GEAR = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gold_gear"), new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16)));
+        IRON_PLATES = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "iron_plates"), new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16)));
+        GOLD_PLATES = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gold_plates"), new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16)));
 
         IRON_DUST = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "iron_dust"), new Item(new Item.Settings().group(ItemGroup.MISC)));
         GOLD_DUST = Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gold_dust"), new Item(new Item.Settings().group(ItemGroup.MISC)));

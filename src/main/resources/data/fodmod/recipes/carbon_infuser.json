@@ -3,7 +3,7 @@
   "pattern": [
     "###",
     "gPg",
-    "rFr"
+    "rCr"
   ],
   "key": {
     "#": {
@@ -18,12 +18,12 @@
     "P": {
       "item": "minecraft:piston"
     },
-    "F": {
-      "item": "minecraft:furnace"
+    "C": {
+      "item": "minecraft:coal_block"
     }
   },
   "result": {
-    "item": "fodmod:processor",
+    "item": "fodmod:carbon_infuser",
     "count": 1
   }
 }

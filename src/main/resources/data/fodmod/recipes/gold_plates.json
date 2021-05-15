@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " g ",
-    "gGg",
-    " g "
+    "g",
+    "G",
+    "g"
   ],
   "key": {
     "g": {
@@ -14,7 +14,7 @@
     }
   },
   "result": {
-    "item": "fodmod:gold_gear",
-    "count": 1
+    "item": "fodmod:gold_plates",
+    "count": 2
   }
 }

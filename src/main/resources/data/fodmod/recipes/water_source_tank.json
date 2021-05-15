@@ -9,7 +9,7 @@
       "item": "minecraft:water_bucket"
     },
     "g": {
-      "tag": "c:gold_gears"
+      "item": "fodmod:gold_plates"
     }
   },
   "result": {

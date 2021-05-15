@@ -1,7 +1,6 @@
 package mounderfod.mounderfodfodmod.client;
 
 import mounderfod.mounderfodfodmod.MounderfodFodmod;
-import mounderfod.mounderfodfodmod.entity.TaterEntityRenderer;
 import mounderfod.mounderfodfodmod.screen.BoxScreen;
 import mounderfod.mounderfodfodmod.screen.CarbonInfuserScreen;
 import mounderfod.mounderfodfodmod.screen.CentrifugeScreen;
@@ -9,7 +8,6 @@ import mounderfod.mounderfodfodmod.screen.ProcessorScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 
 @Environment(EnvType.CLIENT)
@@ -20,8 +18,5 @@ public class MounderfodFodmodClient implements ClientModInitializer {
         ScreenRegistry.register(MounderfodFodmod.PROCESSOR_SCREEN_HANDLER, ProcessorScreen::new);
         ScreenRegistry.register(MounderfodFodmod.CARBON_INFUSER_SCREEN_HANDLER, CarbonInfuserScreen::new);
         ScreenRegistry.register(MounderfodFodmod.CENTRIFUGE_SCREEN_HANDLER, CentrifugeScreen::new);
-        EntityRendererRegistry.INSTANCE.register(MounderfodFodmod.TATER, (dispatcher, context) -> {
-            return new TaterEntityRenderer(dispatcher);
-        });
     }
 }
